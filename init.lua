@@ -37,9 +37,7 @@ require('lualine').setup {
 }
 require("plugin_configs.onedark-config")
 require('onedark').load()
---[[
---Override color groups (:hi)
-vim.api.nvim_set_hl(0, "CocHighlightText", {bg = "#1e3242"})
-vim.api.nvim_set_hl(0, "CocFloating", {bg = "#5a5b5e"})
---vim.api.nvim_set_hl(0, "CocHighlightText", {bg = "#2c485f"})--#5a5b5e#2c485f
---]]
+
+--Terminal (Powershell) window color
+vim.api.nvim_set_hl(0, "Floaterm", {bg = "#012456"})
+vim.api.nvim_set_hl(0, "FloatermBorder", {fg = "#c19c00"})

@@ -27,4 +27,5 @@ function M.build_conditional_and_run()
     M.build_conditional()
     M.run_project()
 end
+
 return M
