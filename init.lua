@@ -21,22 +21,8 @@ vim.o.shellxquote = ''
 require("custom.keymaps")
 vim.cmd('Setdir') -- Set Powershell terminal to cwd at startup
 
-
---Plugin Packer
-require("plugin_configs.packer-config")
---Filetree & Icons
-require("plugin_configs.tree-config")
-require("plugin_configs.web_devicons-config")
---Harpoon
-require("plugin_configs.harpoon-config")
---Language
-require("plugin_configs.treesitter-config")
---Appearance
-require('lualine').setup {
-  options = { theme  = 'onedark' }
-}
-require("plugin_configs.onedark-config")
-require('onedark').load()
+--Plugin Manager Lazy
+require("plugin_configs.lazy-config")
 
 --Terminal (Powershell) window color
 vim.api.nvim_set_hl(0, "Floaterm", {bg = "#012456"})
