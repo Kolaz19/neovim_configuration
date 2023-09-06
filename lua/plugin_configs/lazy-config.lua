@@ -64,7 +64,6 @@ require('lazy').setup({
 	    }
 	end
     },
-    
     {--FLOAT TERMINAL
 	'voldikss/vim-floaterm',
 	lazy = true,
@@ -75,6 +74,5 @@ require('lazy').setup({
 	    require("plugin_configs.floaterm-config")
 	end
     },
-
-    'nvim-lua/plenary.nvim',
+    'nvim-lua/plenary.nvim'
 })
