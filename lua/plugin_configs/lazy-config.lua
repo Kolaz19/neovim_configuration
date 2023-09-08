@@ -97,10 +97,21 @@ require('lazy').setup({
     },
     {
 	'neovim/nvim-lspconfig',
-	dependencies = { 'williamboman/mason.nvim',
-	'williamboman/mason-lspconfig.nvim' },
+	dependencies = { 
+	    'williamboman/mason.nvim',
+	    'williamboman/mason-lspconfig.nvim', 
+	    'hrsh7th/nvim-cmp',
+	    'hrsh7th/cmp-nvim-lsp',
+	    'L3MON4D3/LuaSnip',
+	    'saadparwaiz1/cmp_luasnip',
+	},
 	config = function()
 	    require("plugin_configs.lspconfig-config")
 	end
-    }
+    },
+    --AUTOCOMPLETION
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
 })

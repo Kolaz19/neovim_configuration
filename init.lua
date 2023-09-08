@@ -25,7 +25,7 @@ vim.cmd('Setdir') -- Set Powershell terminal to cwd at startup
 require("plugin_configs.lazy-config")
 
 --For Omnicomplete
-vim.o.completeopt = 'menu'
+--vim.o.completeopt = 'menu'
 
 --Terminal (Powershell) window color
 vim.api.nvim_set_hl(0, "Floaterm", {bg = "#012456"})
