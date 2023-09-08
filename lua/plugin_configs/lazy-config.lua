@@ -74,5 +74,33 @@ require('lazy').setup({
 	    require("plugin_configs.floaterm-config")
 	end
     },
-    'nvim-lua/plenary.nvim'
+
+    'nvim-lua/plenary.nvim',
+    
+    --LSP
+    {
+	'williamboman/mason.nvim',
+	config = function()
+	    require("mason").setup()
+	end
+    },
+    {
+	'williamboman/mason-lspconfig.nvim',
+	dependencies = { 'williamboman/mason.nvim' },
+	config = function()
+	    require("mason-lspconfig").setup {
+		ensure_installed = {},
+		automatic_installation = false,
+		handlers = nil,
+	    }
+	end
+    },
+    {
+	'neovim/nvim-lspconfig',
+	dependencies = { 'williamboman/mason.nvim',
+	'williamboman/mason-lspconfig.nvim' },
+	config = function()
+	    require("plugin_configs.lspconfig-config")
+	end
+    }
 })
