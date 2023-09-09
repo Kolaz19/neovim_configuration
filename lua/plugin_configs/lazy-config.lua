@@ -55,6 +55,10 @@ require('lazy').setup({
 	    require("plugin_configs.harpoon-config")
 	end
     },
+    {
+	'nvim-lua/plenary.nvim',
+	lazy = true
+    },
     
     {--LUALINE
 	'nvim-lualine/lualine.nvim',
@@ -74,19 +78,23 @@ require('lazy').setup({
 	    require("plugin_configs.floaterm-config")
 	end
     },
-
-    'nvim-lua/plenary.nvim',
-    
-    --LSP
-    {
-	'williamboman/mason.nvim',
+    {--LSP
+	'neovim/nvim-lspconfig',
+	lazy = true,
+	ft = {"c","h","lua"},
+	dependencies = { 
+	    'williamboman/mason.nvim',
+	    'williamboman/mason-lspconfig.nvim', 
+	    'hrsh7th/nvim-cmp',
+	},
 	config = function()
-	    require("mason").setup()
+	    require("plugin_configs.lspconfig-config")
 	end
     },
     {
 	'williamboman/mason-lspconfig.nvim',
 	dependencies = { 'williamboman/mason.nvim' },
+	lazy = true,
 	config = function()
 	    require("mason-lspconfig").setup {
 		ensure_installed = {},
@@ -96,22 +104,38 @@ require('lazy').setup({
 	end
     },
     {
-	'neovim/nvim-lspconfig',
+	'williamboman/mason.nvim',
+	lazy = true,
+	config = function()
+	    require("mason").setup()
+	end
+    },
+    {--AUTOCOMPLETION
+	'hrsh7th/nvim-cmp',
+	lazy = true,
 	dependencies = { 
-	    'williamboman/mason.nvim',
-	    'williamboman/mason-lspconfig.nvim', 
-	    'hrsh7th/nvim-cmp',
 	    'hrsh7th/cmp-nvim-lsp',
 	    'L3MON4D3/LuaSnip',
 	    'saadparwaiz1/cmp_luasnip',
 	},
 	config = function()
-	    require("plugin_configs.lspconfig-config")
+	    require("plugin_configs.cmp-config")
 	end
     },
-    --AUTOCOMPLETION
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-nvim-lsp',
-    'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
+    {
+	'hrsh7th/nvim-cmp',
+	lazy = true
+    },
+    {
+	'hrsh7th/cmp-nvim-lsp',
+	lazy = true
+    },
+    {
+	'L3MON4D3/LuaSnip',
+	lazy = true
+    },
+    {
+	'saadparwaiz1/cmp_luasnip',
+	lazy = true
+    },
 })
