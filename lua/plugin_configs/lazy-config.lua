@@ -81,7 +81,7 @@ require('lazy').setup({
     {--LSP
 	'neovim/nvim-lspconfig',
 	lazy = true,
-	ft = {"c","h","lua"},
+	ft = {"c","h","lua","ps1"},
 	dependencies = { 
 	    'williamboman/mason.nvim',
 	    'williamboman/mason-lspconfig.nvim', 

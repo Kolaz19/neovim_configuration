@@ -1,14 +1,21 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 
--- Set up lspconfig.
+-- Give capabilities (snipping) to LSP
+-- So that the server knows what we can do
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lspconfig.clangd.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   capabilities = capabilities,
 }
 
+lspconfig.powershell_es.setup {
+  -- Server-specific settings. See `:help lspconfig-setup`
+  capabilities = capabilities,
+}
+
 lspconfig.lua_ls.setup{
+    capabilities = capabilities,
     settings = {
 	Lua = {
 	    diagnostics = {
