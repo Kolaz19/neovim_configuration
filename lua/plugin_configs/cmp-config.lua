@@ -19,8 +19,8 @@ cmp.setup({
       -- documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-	['<C-k>'] = cmp.mapping.select_prev_item(),
-	['<C-j>'] = cmp.mapping.select_next_item(),
+	['<S-Tab>'] = cmp.mapping.select_prev_item(),
+	['<Tab>'] = cmp.mapping.select_next_item(),
 	  --['<C-j>'] = cmp.mapping.scroll_docs(-4),
 	  --['<C-k>'] = cmp.mapping.scroll_docs(4),
 	--Jump to next parameter with snippet engine

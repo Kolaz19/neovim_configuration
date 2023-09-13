@@ -9,6 +9,7 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
 }
 
+--Only works with powershell 7
 lspconfig.powershell_es.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   capabilities = capabilities,
