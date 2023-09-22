@@ -71,10 +71,13 @@ require('lazy').setup({
     {--FLOAT TERMINAL
 	'voldikss/vim-floaterm',
 	lazy = true,
-	keys = { 
+	--for open terminal manually
+	keys = {
 	    { "<leader>t" }
 	},
-	config = function() 
+	--for running powershell script
+	cmd = "FloatermToggle",
+	config = function()
 	    require("plugin_configs.floaterm-config")
 	end
     },

@@ -8,9 +8,6 @@ local fileType = vim.bo.filetype
 	--Get file name 
 	local luaCommandWithFile = vim.fn.expand('%')
 	vim.cmd(":!lua "..luaCommandWithFile)
-    elseif fileType == 'ps1' then
-	local powershellFile = vim.fn.expand('%:t')
-	vim.cmd(":! .\\"..powershellFile.."")
     end
 end
 
@@ -18,8 +15,10 @@ function M.run_project()
 local fileType = vim.bo.filetype
     if ( fileType == 'c' or fileType == 'cpp' ) then
 	vim.cmd("make run")
-    elseif fileType == 'lua' then
-	print("No Config to run lua file!")
+    elseif fileType == 'ps1' then
+	local powershellFile = vim.fn.expand('%:t')
+	vim.cmd(":FloatermToggle")
+	vim.cmd(":FloatermSend .\\"..powershellFile.."")
     end
 end
 

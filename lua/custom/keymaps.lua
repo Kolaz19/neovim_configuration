@@ -1,9 +1,10 @@
 --Custom keymaps
-vim.keymap.set('n', '<C-S-b>', "<cmd>:lua require('custom.utils').build_conditional()<cr>", {desc = 'Build Project'})
+vim.keymap.set('n', '<F3>', "<cmd>:lua require('custom.utils').build_conditional()<cr>", {desc = 'Build Project'})
 vim.keymap.set('n', '<F8>', "<cmd>:lua require('custom.utils').run_project()<cr>", { desc = 'Build Project' })
 vim.keymap.set('n', '<F9>', "<cmd>:lua require('custom.utils').build_conditional_and_run()<cr>", { desc = 'Build Project and run it' })
 vim.keymap.set('n', '<leader>s', "<cmd>:w<cr>", {desc = 'Save buffer'})
-
+--Addition to Floaterm
+vim.keymap.set('t', '<C-d>' , "<C-\\><C-n>", {desc = 'Go to normal mode in terminal' })
 --Move from window to window
 vim.cmd('nmap <space> <Nop>')
 vim.keymap.set('n', '<space>k', '<C-w>k', {desc = 'Move to window above'})
@@ -30,3 +31,4 @@ vim.keymap.set('n', '<space><Left>', '<cmd>:vert res -20<cr>', {desc = 'Decrease
 
 --Custom commands
 vim.api.nvim_create_user_command('Setdir', "cd %:p:h", { nargs = 0})
+
