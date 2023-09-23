@@ -20,30 +20,27 @@ require('lazy').setup({
 	    require('onedark').load()
 	end
     },
-    
     {--TREE
 	'nvim-tree/nvim-tree.lua',
 	dependencies = {'nvim-tree/nvim-web-devicons'},
 	lazy = true,
-	keys = { 
+	keys = {
 	    { "<C-n>" }
 	},
 	config = function()
 	    require("plugin_configs.tree-config")
 	end
     },
-    
     {--DEVICONS
 	'nvim-tree/nvim-web-devicons',
 	config = function()
 	    require("plugin_configs.web_devicons-config")
 	end
     },
-    
     {--TREESITTER
 	'nvim-treesitter/nvim-treesitter',
 	build = {":TSUpdate"},
-	config = function() 
+	config = function()
 	    require("plugin_configs.treesitter-config")
 	end
     },
@@ -59,7 +56,6 @@ require('lazy').setup({
 	'nvim-lua/plenary.nvim',
 	lazy = true
     },
-    
     {--LUALINE
 	'nvim-lualine/lualine.nvim',
 	config = function()
@@ -85,9 +81,8 @@ require('lazy').setup({
 	'neovim/nvim-lspconfig',
 	lazy = true,
 	ft = {"c","h","lua","ps1"},
-	dependencies = { 
-	    'williamboman/mason.nvim',
-	    'williamboman/mason-lspconfig.nvim', 
+	dependencies = {
+	    'williamboman/mason-lspconfig.nvim',
 	    'hrsh7th/nvim-cmp',
 	},
 	config = function()
@@ -115,8 +110,11 @@ require('lazy').setup({
     },
     {--AUTOCOMPLETION
 	'hrsh7th/nvim-cmp',
+	--We can't lazy load NVIM-CMP on it's own,
+	--because we use it to update the capabilities
+	--in our lspconfig-config
 	lazy = true,
-	dependencies = { 
+	dependencies = {
 	    'hrsh7th/cmp-nvim-lsp',
 	    'L3MON4D3/LuaSnip',
 	    'saadparwaiz1/cmp_luasnip',
@@ -124,10 +122,6 @@ require('lazy').setup({
 	config = function()
 	    require("plugin_configs.cmp-config")
 	end
-    },
-    {
-	'hrsh7th/nvim-cmp',
-	lazy = true
     },
     {
 	'hrsh7th/cmp-nvim-lsp',

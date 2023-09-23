@@ -17,7 +17,7 @@ require("nvim-tree").setup( setup_table )
 --Focus window or close it if focused 
 local function handle_tree_window()
     if (api.tree.is_tree_buf(0))  then
-	api.tree.close()	
+	api.tree.close()
     else
 	api.tree.open({find_file = true, update_root = true})
     end
