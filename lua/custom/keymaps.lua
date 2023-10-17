@@ -17,9 +17,9 @@ vim.keymap.set('n', '<leader>s', '<C-w>s', {desc = 'Split window horizontally'})
 vim.keymap.set('n', '<leader>b', '<cmd>:vnew<cr>', {desc = 'New window vertically'})
 vim.keymap.set('n', '<leader>g', '<C-w><C-n>', {desc = 'New window horizontally'})
 --Rotate window
-vim.keymap.set('n', '<leader>e', '<C-w>r', {desc = 'Rotate window downwards/rightwards'})
-vim.keymap.set('n', '<leader>w', '<C-w>R', {desc = 'Rotate window upwards/leftwards'})
-vim.keymap.set('n', '<leader>q', '<C-w>x', {desc = 'Exchange window with next one'})
+vim.keymap.set('n', '<leader>x', '<C-w>r', {desc = 'Rotate window downwards/rightwards'})
+vim.keymap.set('n', '<leader>c', '<C-w>R', {desc = 'Rotate window upwards/leftwards'})
+vim.keymap.set('n', '<leader>z', '<C-w>x', {desc = 'Exchange window with next one'})
 --Resize window
 vim.keymap.set('n', '<S-Up>', '<cmd>:res +10<cr>', {desc = 'Increse window height by 5'})
 vim.keymap.set('n', '<S-Down>', '<cmd>:res -10<cr>', {desc = 'Decrease window height by 5'})
