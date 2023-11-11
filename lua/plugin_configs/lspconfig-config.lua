@@ -35,9 +35,9 @@ lspconfig.lua_ls.setup{
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', 'go', vim.diagnostic.open_float)
+vim.keymap.set('n', 'gO', vim.diagnostic.setloclist)
 vim.keymap.set('n', 'g[', vim.diagnostic.goto_prev)
 vim.keymap.set('n', 'g]', vim.diagnostic.goto_next)
-vim.keymap.set('n', 'gp', vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
