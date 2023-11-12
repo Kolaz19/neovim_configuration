@@ -7,6 +7,12 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lspconfig.clangd.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   capabilities = capabilities,
+  filetypes = { "c", "h" },
+  root_dir = lspconfig.util.root_pattern('.clang-format'),
+  cmd = {
+    "clangd",
+    "--target=x86_64-w64-windows-gnu"
+  }
 }
 
 lspconfig.marksman.setup {

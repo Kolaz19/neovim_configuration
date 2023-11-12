@@ -7,6 +7,9 @@ vim.opt.shiftwidth = 4
 vim.opt.ignorecase = false
 vim.opt.wrap = false
 vim.opt.breakindent = true
+--Vim does detect h files as cpp
+vim.g.c_syntax_for_h = 1
+
 
 
 --Powershell configuration
