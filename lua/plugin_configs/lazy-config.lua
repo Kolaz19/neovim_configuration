@@ -44,7 +44,6 @@ require('lazy').setup({
 	    require("plugin_configs.treesitter-config")
 	end
     },
-
     {--HARPOON
 	'ThePrimeagen/harpoon',
 	dependencies = {'nvim-lua/plenary.nvim'},
