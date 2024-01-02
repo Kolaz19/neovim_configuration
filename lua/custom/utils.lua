@@ -16,9 +16,7 @@ local fileType = vim.bo.filetype
     if ( fileType == 'c' or fileType == 'cpp' ) then
 	vim.cmd("make run")
     elseif fileType == 'ps1' then
-	local powershellFile = vim.fn.expand('%:t')
-	vim.cmd(":FloatermToggle")
-	vim.cmd(":FloatermSend .\\"..powershellFile.."")
+	--TODO
     end
 end
 

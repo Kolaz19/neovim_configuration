@@ -44,36 +44,12 @@ require('lazy').setup({
 	    require("plugin_configs.treesitter-config")
 	end
     },
-    {--HARPOON
-	'ThePrimeagen/harpoon',
-	dependencies = {'nvim-lua/plenary.nvim'},
-	config = function()
-	    require("plugin_configs.harpoon-config")
-	end
-    },
-    {
-	'nvim-lua/plenary.nvim',
-	lazy = true
-    },
     {--LUALINE
 	'nvim-lualine/lualine.nvim',
 	config = function()
 	    require('lualine').setup {
 		options = { theme  = 'onedark' }
 	    }
-	end
-    },
-    {--FLOAT TERMINAL
-	'voldikss/vim-floaterm',
-	lazy = true,
-	--for open terminal manually
-	keys = {
-	    { "<leader>t" }
-	},
-	--for running powershell script
-	cmd = "FloatermToggle",
-	config = function()
-	    require("plugin_configs.floaterm-config")
 	end
     },
     {--LSP
@@ -94,7 +70,7 @@ require('lazy').setup({
 	lazy = true,
 	config = function()
 	    require("mason-lspconfig").setup {
-		ensure_installed = {},
+		ensure_installed = { "clangd", "lua_ls", "marksman", "powershell_es" },
 		automatic_installation = false,
 		handlers = nil,
 	    }

@@ -9,7 +9,7 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
   filetypes = { "c", "h" },
   root_dir = lspconfig.util.root_pattern('.clang-format'),
-  --For clangd to work properly and find all header files,
+  --windows: For clangd to work properly and find all header files,
   --we need to create config.yaml in clangd folder under Local
   --CompileFlags:
   --	Add:

@@ -10,23 +10,9 @@ vim.opt.breakindent = true
 --Vim does detect h files as cpp
 vim.g.c_syntax_for_h = 1
 
-
-
---Powershell configuration
-vim.o.shell = 'pwsh'
-vim.o.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
-vim.o.shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
-vim.o.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
-vim.o.shellquote = ''
-vim.o.shellxquote = ''
-
 --Custom
 require("custom.keymaps")
-vim.cmd('Setdir') -- Set Powershell terminal to cwd at startup
+vim.cmd('Setdir') -- Set terminal to cwd at startup
 
 --Plugin Manager Lazy
 require("plugin_configs.lazy-config")
-
---Terminal (Powershell) window color
-vim.api.nvim_set_hl(0, "Floaterm", {bg = "#012456"})
-vim.api.nvim_set_hl(0, "FloatermBorder", {fg = "#c19c00"})
