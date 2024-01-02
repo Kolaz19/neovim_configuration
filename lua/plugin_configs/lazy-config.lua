@@ -20,6 +20,12 @@ require('lazy').setup({
 	    require('onedark').load()
 	end
     },
+    {--MARKS
+	'chentoast/marks.nvim',
+	config = function()
+	    require("plugin_configs.marks-config")
+	end
+    },
     {--TREE
 	'nvim-tree/nvim-tree.lua',
 	dependencies = {'nvim-tree/nvim-web-devicons'},
