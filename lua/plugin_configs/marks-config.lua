@@ -24,7 +24,7 @@ require'marks'.setup {
   -- across multiple buffers. default sign is '!@#$%^&*()' (from 0 to 9), and
   -- default virt_text is "".
   bookmark_1 = {
-    sign = "🚩",
+    sign = "📌",
     virt_text = "", --Shown right side of line
     annotate = false, --Shown above line
   },
