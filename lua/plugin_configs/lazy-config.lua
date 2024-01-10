@@ -76,8 +76,9 @@ require('lazy').setup({
 	lazy = true,
 	config = function()
 	    require("mason-lspconfig").setup {
-		ensure_installed = { "clangd", "lua_ls", "marksman", "powershell_es" },
-		automatic_installation = false,
+		--ensure_installed = { "clangd", "lua_ls", "marksman", "powershell_es" },
+		--All Servers setup with nvim-lspconfig should be installed
+		automatic_installation = true,
 		handlers = nil,
 	    }
 	end
