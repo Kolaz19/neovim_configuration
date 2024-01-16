@@ -20,11 +20,23 @@ require('lazy').setup({
 	    require('onedark').load()
 	end
     },
-    {--MARKS
-	'chentoast/marks.nvim',
+    {--GRAPPLE
+	'cbochs/grapple.nvim',
+	dependencies = { "nvim-lua/plenary.nvim" },
+	keys = {
+	    { "<leader>w" },
+	    { "<leader>q" },
+	    { "<leader>a" },
+	    { "<leader>t" },
+	    { "<leader>d" },
+	},
 	config = function()
-	    require("plugin_configs.marks-config")
+	    require("plugin_configs.grapple-config")
 	end
+    },
+    {--PLENARY
+	'nvim-lua/plenary.nvim',
+	lazy = true,
     },
     {--TREE
 	'nvim-tree/nvim-tree.lua',

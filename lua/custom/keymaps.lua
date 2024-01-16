@@ -25,4 +25,4 @@ vim.keymap.set('n', '<S-Right>', '<cmd>:vert res +20<cr>', {desc = 'Increse wind
 vim.keymap.set('n', '<S-Left>', '<cmd>:vert res -20<cr>', {desc = 'Decrease window width by 5'})
 
 --Custom commands
-vim.api.nvim_create_user_command('Setdir', "cd %:p:h", { nargs = 0})
+vim.api.nvim_create_user_command('Setdir', "cd %:h", { nargs = 0})
