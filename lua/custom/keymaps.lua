@@ -2,6 +2,9 @@
 vim.keymap.set('n', '<F3>', "<cmd>:lua require('custom.utils').build_conditional()<cr>", {desc = 'Build Project'})
 vim.keymap.set('n', '<F8>', "<cmd>:lua require('custom.utils').run_project()<cr>", { desc = 'Build Project' })
 vim.keymap.set('n', '<F9>', "<cmd>:lua require('custom.utils').build_conditional_and_run()<cr>", { desc = 'Build Project and run it' })
+--Tab switch
+vim.keymap.set('n', '<F2>', "<cmd>:tabn<cr>", { desc = 'Jump to next tab' })
+vim.keymap.set('t', '<F2>', "<cmd>:tabn<cr>", { desc = 'Jump to next tab' })
 --Move from window to window
 vim.cmd('nmap <space> <Nop>')
 vim.keymap.set('n', '<Up>', '<C-w>k', {desc = 'Move to window above'})
@@ -26,3 +29,5 @@ vim.keymap.set('n', '<S-Left>', '<cmd>:vert res -20<cr>', {desc = 'Decrease wind
 
 --Custom commands
 vim.api.nvim_create_user_command('Setdir', "cd %:h", { nargs = 0})
+vim.api.nvim_create_user_command('Debugs', "packadd termdebug", { nargs = 0})
+vim.api.nvim_create_user_command('Debug', require('custom.utils').debug_this, { nargs = 1})

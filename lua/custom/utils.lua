@@ -25,4 +25,8 @@ function M.build_conditional_and_run()
     M.run_project()
 end
 
+function M.debug_this(opts)
+    vim.cmd("Termdebug "..opts.args)
+end
+
 return M
