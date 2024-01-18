@@ -30,6 +30,7 @@ require('lazy').setup({
 	    { "<leader>t" },
 	    { "<leader>d" },
 	},
+	lazy = true,
 	config = function()
 	    require("plugin_configs.grapple-config")
 	end
@@ -38,15 +39,15 @@ require('lazy').setup({
 	'nvim-lua/plenary.nvim',
 	lazy = true,
     },
-    {--TREE
-	'nvim-tree/nvim-tree.lua',
+    {--OIL
+	'stevearc/oil.nvim',
 	dependencies = {'nvim-tree/nvim-web-devicons'},
 	lazy = true,
 	keys = {
 	    { "<C-n>" }
 	},
 	config = function()
-	    require("plugin_configs.tree-config")
+	    require("plugin_configs.oil-config")
 	end
     },
     {--DEVICONS
