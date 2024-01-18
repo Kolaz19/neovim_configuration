@@ -27,7 +27,7 @@ require("oil").setup({
     concealcursor = "nvic",
   },
   -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
-  delete_to_trash = false,
+  delete_to_trash = true,
   -- Skip the confirmation popup for simple operations
   skip_confirm_for_simple_edits = false,
   -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
@@ -49,14 +49,24 @@ require("oil").setup({
   -- Set to `false` to remove a keymap
   -- See :help oil-actions for a list of all available actions
   keymaps = {
-    ["g?"] = "actions.show_help",
+
     ["<CR>"] = "actions.select",
+    ["<TAB>"] = "actions.select",
+
+    ["g?"] = "actions.show_help",
     ["<C-v>"] = "actions.select_vsplit",
     ["<C-s>"] = "actions.select_split",
     ["<C-t>"] = "actions.select_tab",
     ["<C-p>"] = "actions.preview",
+    ["<C-r>"] = "actions.refresh",
+
     ["<C-n>"] = "actions.close",
-    ["<C-l>"] = "actions.refresh",
+    ["<ESC>"] = "actions.close",
+
+    --Only useful without floating window
+    ["<C-u>"] = "actions.preview_scroll_up",
+    ["<C-d>"] = "actions.preview_scroll_down",
+
     ["-"] = "actions.parent",
     ["_"] = "actions.open_cwd",
     ["`"] = "actions.cd",
@@ -90,11 +100,11 @@ require("oil").setup({
   float = {
     -- Padding around the floating window
     padding = 10,
-    max_width = 0,
-    max_height = 0,
+    max_width = 80,
+    max_height = 30,
     border = "rounded",
     win_options = {
-      winblend = 20,
+      winblend = 30,
     },
     -- This is the config that will be passed to nvim_open_win.
     -- Change values here to customize the layout
@@ -138,7 +148,7 @@ require("oil").setup({
     border = "rounded",
     minimized_border = "none",
     win_options = {
-      winblend = 0,
+      winblend = 30,
     },
   },
 })
