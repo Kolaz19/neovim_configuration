@@ -11,7 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 require('lazy').setup({
     {--ONEDARK
 	'navarasu/onedark.nvim',
@@ -67,7 +66,15 @@ require('lazy').setup({
 	'nvim-lualine/lualine.nvim',
 	config = function()
 	    require('lualine').setup {
-		options = { theme  = 'onedark' }
+		options = { theme  = 'onedark' },
+		sections = {
+		    lualine_a = {'mode'},
+		    lualine_b = {'filetype'},
+		    lualine_c = {'filename'},
+		    lualine_x = {'diagnostics'},
+		    lualine_y = {'branch'},
+		    lualine_z = {'progress'},
+		}
 	    }
 	end
     },
