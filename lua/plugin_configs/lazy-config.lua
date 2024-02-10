@@ -73,7 +73,7 @@ require('lazy').setup({
 		    lualine_c = {'filename'},
 		    lualine_x = {'diagnostics'},
 		    lualine_y = {'branch'},
-		    lualine_z = {'progress'},
+		    lualine_z = {'location'},
 		}
 	    }
 	end
