@@ -29,7 +29,7 @@ require("grapple").setup({
 
 
 vim.keymap.set('n', '<leader>a','<cmd>:lua require("grapple").tag()<cr>', {desc = 'Grapple Tag File'})
-vim.keymap.set('n', '<leader>d','<cmd>:lua require("grapple").untag()<cr>', {desc = 'Grapple Tag File'})
+vim.keymap.set('n', '<leader>d','<cmd>:lua require("grapple").untag()<cr>', {desc = 'UnGrapple Tag File'})
 vim.keymap.set('n', '<leader>t','<cmd>:lua require("grapple").popup_tags(scope)<cr>', {desc = 'Toggle Grapple File'})
 
 vim.keymap.set('n', '<leader>w','<cmd>:lua require("grapple").cycle_forward()<cr>', {desc = 'Grapple Cycle Forward'})
