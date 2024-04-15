@@ -26,6 +26,9 @@ vim.keymap.set('n', '<S-Up>', '<cmd>:res +10<cr>', {desc = 'Increase window heig
 vim.keymap.set('n', '<S-Down>', '<cmd>:res -10<cr>', {desc = 'Decrease window height by 5'})
 vim.keymap.set('n', '<S-Right>', '<cmd>:vert res +20<cr>', {desc = 'Increse window width by 5'})
 vim.keymap.set('n', '<S-Left>', '<cmd>:vert res -20<cr>', {desc = 'Decrease window width by 5'})
+--Quickfix List
+vim.keymap.set('n', '<leader>n', '<cmd>cnext<cr>zz', {desc = 'Next item quickfix list'})
+vim.keymap.set('n', '<leader>p', '<cmd>cprev<cr>zz', {desc = 'Previous item quickfix list'})
 
 --Custom commands
 vim.api.nvim_create_user_command('Setdir', "cd %:h", { nargs = 0})
