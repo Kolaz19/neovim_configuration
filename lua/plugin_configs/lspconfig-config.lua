@@ -29,6 +29,7 @@ lspconfig.powershell_es.setup {
 
 lspconfig.lua_ls.setup{
     capabilities = capabilities,
+    filetypes = { "lua", "script" },
     settings = {
 	Lua = {
 	    diagnostics = {

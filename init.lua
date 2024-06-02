@@ -13,6 +13,9 @@ vim.cmd("set nohlsearch")
 
 --Vim does detect h files as cpp
 vim.g.c_syntax_for_h = 1
+vim.filetype.add(
+{ extension = { script = 'lua' }}
+)
 
 --Custom
 require("custom.keymaps")
