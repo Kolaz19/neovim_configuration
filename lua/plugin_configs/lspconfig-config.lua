@@ -34,6 +34,9 @@ lspconfig.lua_ls.setup{
 	Lua = {
 	    diagnostics = {
 		globals = {'vim'},
+	    },
+	    workspace = {
+		library = { "/home/nikolas/Dokumente/Working/Projects/love2d/library", "/home/nikolas/Dokumente/Working/Projects/defold-neovim-stubs/"  }
 	    }
 	}
     }

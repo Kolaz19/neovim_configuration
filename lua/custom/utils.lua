@@ -12,7 +12,8 @@ local fileType = vim.bo.filetype
     if ( fileType == 'c' or fileType == 'cpp' ) then
 	vim.cmd("make run")
     elseif fileType == 'lua' then
-	vim.cmd(":!lua ".."main.lua")
+	--vim.cmd(":!lua ".."main.lua")
+	vim.cmd(":!love .")
     end
 end
 
