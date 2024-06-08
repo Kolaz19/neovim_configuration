@@ -47,8 +47,7 @@ lspconfig.lua_ls.setup{
     client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
       runtime = {
         -- Tell the language server which version of Lua you're using
-        -- (most likely LuaJIT in the case of Neovim)
-        version = 'Lua'
+        version = 'Lua 5.4'
       },
       -- Make the server aware of Neovim runtime files
       workspace = {
