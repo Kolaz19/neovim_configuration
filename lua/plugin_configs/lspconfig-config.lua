@@ -34,12 +34,34 @@ lspconfig.lua_ls.setup{
 	Lua = {
 	    diagnostics = {
 		globals = {'vim'},
-	    },
-	    workspace = {
-		library = { "/home/nikolas/Dokumente/Working/Projects/love2d/library", "/home/nikolas/Dokumente/Working/Projects/defold-neovim-stubs/"  }
 	    }
 	}
-    }
+    },
+    on_init = function(client)
+    local path = client.workspace_folders[1].name
+    --luarc.json file can be provided in workspace
+    if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+      return
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        -- Tell the language server which version of Lua you're using
+        -- (most likely LuaJIT in the case of Neovim)
+        version = 'Lua'
+      },
+      -- Make the server aware of Neovim runtime files
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME,
+	  "/home/nikolas/Dokumente/Working/Projects/love2d/library",
+	  "/home/nikolas/Dokumente/Working/Projects/defold-neovim-stubs/"
+          -- Depending on the usage, you might want to add additional paths here.
+        }
+      }
+    })
+  end
 }
 
 
