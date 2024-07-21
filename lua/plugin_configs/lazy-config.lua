@@ -110,6 +110,13 @@ require('lazy').setup({
 	    require("mason").setup()
 	end
     },
+    {
+	'lewis6991/gitsigns.nvim',
+	lazy = false,
+	config = function()
+	    require("plugin_configs.gitsigns-config")
+	end
+    },
     {--AUTOCOMPLETION
 	'hrsh7th/nvim-cmp',
 	--We can't lazy load NVIM-CMP on it's own,
