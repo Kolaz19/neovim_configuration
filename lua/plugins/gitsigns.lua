@@ -1,4 +1,4 @@
-require('gitsigns').setup {
+local opts = {
   signs = {
     add          = { text = '┃' },
     change       = { text = '┃' },
@@ -62,4 +62,12 @@ require('gitsigns').setup {
       map('n', '<leader>l', gitsigns.reset_hunk)
       map('n', '<leader>;', gitsigns.reset_buffer)
   end
+}
+
+return {
+    {
+    'lewis6991/gitsigns.nvim',
+    lazy = false,
+    opts = opts
+    }
 }

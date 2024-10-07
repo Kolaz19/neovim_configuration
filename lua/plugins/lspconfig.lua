@@ -1,3 +1,4 @@
+local function setupLanguageServers()
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 
@@ -63,14 +64,6 @@ lspconfig.lua_ls.setup{
   end
 }
 
-
--- Global mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', 'go', vim.diagnostic.open_float)
-vim.keymap.set('n', 'gO', vim.diagnostic.setqflist)
-vim.keymap.set('n', 'gp', vim.diagnostic.goto_prev)
-vim.keymap.set('n', 'gn', vim.diagnostic.goto_next)
-
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -102,3 +95,25 @@ vim.api.nvim_create_autocmd('LspAttach', {
     --end, opts)
   end,
 })
+end
+
+return {--LSP
+{
+	'neovim/nvim-lspconfig',
+	lazy = true,
+	ft = {"c","h","lua","script","ps1","markdown"},
+	dependencies = {
+	    'williamboman/mason-lspconfig.nvim',
+	    'hrsh7th/nvim-cmp',
+	},
+	config = setupLanguageServers,
+-- Global mappings.
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+	keys = {
+	    {'n', 'go', vim.diagnostic.open_float},
+	    {'n', 'gO', vim.diagnostic.setqflist},
+	    {'n', 'gp', vim.diagnostic.goto_prev},
+	    {'n', 'gn', vim.diagnostic.goto_next}
+	}
+	}
+}

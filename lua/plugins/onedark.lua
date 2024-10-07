@@ -1,4 +1,4 @@
-require('onedark').setup  {
+local opts =  {
     -- Main options --
     style = 'warmer', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     transparent = false,  -- Show/hide background
@@ -38,4 +38,15 @@ require('onedark').setup  {
         undercurl = true,   -- use undercurl instead of underline for diagnostics
         background = true,    -- use background color for virtual text
     },
+}
+
+
+return {--ONEDARK
+{
+    'navarasu/onedark.nvim',
+    opts = opts,
+    config = function()
+	require('onedark').load()
+    end
+    }
 }

@@ -1,4 +1,4 @@
-require("oil").setup({
+local opts = {
   -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
   -- Set to false if you still want to use netrw.
   default_file_explorer = true,
@@ -157,6 +157,17 @@ require("oil").setup({
       winblend = 30,
     },
   },
-})
+}
 
-vim.keymap.set("n", "<C-n>", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
+
+return {--OIL
+{
+    'stevearc/oil.nvim',
+    dependencies = {'nvim-tree/nvim-web-devicons'},
+    lazy = true,
+    keys = {
+	{"<C-n>", "<CMD>Oil --float<CR>", "Open parent directory" }
+    },
+    opts = opts
+    }
+}

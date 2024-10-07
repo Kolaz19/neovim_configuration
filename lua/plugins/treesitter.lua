@@ -1,4 +1,4 @@
-require'nvim-treesitter.configs'.setup {
+local opts = {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   -- Removed for performance
   ensure_installed =  { "c", "lua", "vim", "vimdoc", "html", "make", "xml" },
@@ -42,4 +42,13 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+}
+
+
+return {--TREESITTER
+{
+    'nvim-treesitter/nvim-treesitter',
+    build = {":TSUpdate"},
+    opts = opts
+    }
 }
