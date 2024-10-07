@@ -110,10 +110,10 @@ return {--LSP
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 	keys = {
-	    {'n', 'go', vim.diagnostic.open_float},
-	    {'n', 'gO', vim.diagnostic.setqflist},
-	    {'n', 'gp', vim.diagnostic.goto_prev},
-	    {'n', 'gn', vim.diagnostic.goto_next}
+	    {'go', vim.diagnostic.open_float},
+	    {'gO', vim.diagnostic.setqflist},
+	    {'gp', vim.diagnostic.goto_prev},
+	    {'gn', vim.diagnostic.goto_next}
 	}
 	}
 }
