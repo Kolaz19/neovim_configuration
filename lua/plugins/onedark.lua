@@ -45,7 +45,8 @@ return {--ONEDARK
 {
     'navarasu/onedark.nvim',
     opts = opts,
-    config = function()
+    config = function(plugin,options)
+	require('onedark').setup(options)
 	require('onedark').load()
     end
     }
