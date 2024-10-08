@@ -1,6 +1,6 @@
-require ("custom.options")
-require ("custom.keymaps")
-require ("config.lazy")
+require("custom.options")
+require("custom.keymaps")
+require("config.lazy")
 
 --[[
     GRAPPLLE

@@ -3,7 +3,11 @@ vim.g.mapleader = ","
 vim.opt.number = true
 vim.opt.hlsearch = false
 vim.opt.autochdir = false
-vim.opt.shiftwidth = 4
+
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+
 vim.opt.ignorecase = false
 vim.opt.wrap = false
 vim.opt.breakindent = true
@@ -14,11 +18,11 @@ vim.g.termdebug_wide = 163
 --Vim does detect h files as cpp
 vim.g.c_syntax_for_h = 1
 vim.filetype.add(
-{ extension = { script = 'lua' }}
+	{ extension = { script = 'lua' } }
 )
 
 --Only set cwd for grapple when initial buffer is not empty
-vim.api.nvim_create_user_command('Setdir', "cd %:h", { nargs = 0})
+vim.api.nvim_create_user_command('Setdir', "cd %:h", { nargs = 0 })
 if vim.api.nvim_buf_get_name(0) ~= '' then
-    vim.cmd("Setdir")
+	vim.cmd("Setdir")
 end
