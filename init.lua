@@ -35,6 +35,7 @@ vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 vim.keymap.set('n', 'gk', vim.lsp.buf.signature_help, opts)
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
+vim.keymap.set('n', 'gf', vim.lsp.buf.format, opts)
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
 vim.keymap.set({ 'n', 'v' }, '<leader>c', vim.lsp.buf.code_action, opts)
 
