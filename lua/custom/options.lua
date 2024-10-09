@@ -1,14 +1,14 @@
 --Global settings
 vim.g.mapleader = ","
 vim.opt.number = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.autochdir = false
 
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 
-vim.opt.ignorecase = false
+vim.opt.ignorecase = true
 vim.opt.wrap = false
 vim.opt.breakindent = true
 vim.opt.showtabline = 0
