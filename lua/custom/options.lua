@@ -1,7 +1,7 @@
 --Global settings
 vim.g.mapleader = ","
 vim.opt.number = true
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 vim.opt.autochdir = false
 
 vim.o.shiftwidth = 4
