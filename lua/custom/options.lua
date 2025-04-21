@@ -21,6 +21,8 @@ vim.filetype.add(
 	{ extension = { script = 'lua' } }
 )
 
+vim.filetype.add { extension = { p8 = "p8" } }
+
 --Only set cwd for grapple when initial buffer is not empty
 vim.api.nvim_create_user_command('Setdir', "cd %:h", { nargs = 0 })
 if vim.api.nvim_buf_get_name(0) ~= '' then

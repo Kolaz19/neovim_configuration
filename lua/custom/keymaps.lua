@@ -34,3 +34,6 @@ vim.keymap.set('n', '<leader>p', '<cmd>cprev<cr>zz', { desc = 'Previous item qui
 vim.api.nvim_create_user_command('Setdir', "cd %:h", { nargs = 0 })
 vim.api.nvim_create_user_command('Debugs', "packadd termdebug", { nargs = 0 })
 vim.api.nvim_create_user_command('Debug', require('custom.utils').debug_this, { nargs = 1 })
+vim.api.nvim_create_user_command('W', "w", { nargs = 0 })
+vim.api.nvim_create_user_command('Wa', "wa", { nargs = 0 })
+vim.api.nvim_create_user_command('WA', "wa", { nargs = 0 })

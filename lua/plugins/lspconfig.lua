@@ -10,6 +10,10 @@ local function setupLanguageServers()
 		capabilities = capabilities,
 		filetypes = { "c", "h" },
 		root_dir = lspconfig.util.root_pattern('.clang-format'),
+		cmd = {
+			"clangd",
+			"--background-index"
+		}
 		--windows: For clangd to work properly and find all header files,
 		--we need to create config.yaml in clangd folder under Local
 		--CompileFlags:
@@ -55,8 +59,9 @@ local function setupLanguageServers()
 					checkThirdParty = false,
 					library = {
 						vim.env.VIMRUNTIME,
-						"/home/nikolas/Dokumente/Working/Projects/love2d/library",
-						"/home/nikolas/Dokumente/Working/Projects/defold-neovim-stubs/"
+						--"/home/nikolas/Dokumente/Working/Projects/love2d/library",
+						--"/home/nikolas/Dokumente/Working/Projects/defold-neovim-stubs/",
+						"/home/nikolas/Dokumente/Working/Projects/pico8_library/"
 						-- Depending on the usage, you might want to add additional paths here.
 					}
 				}
