@@ -39,6 +39,9 @@ local function setupLanguageServers()
 			Lua = {
 				diagnostics = {
 					globals = { 'vim' },
+				},
+				completion = {
+					callSnippet = 'Replace'
 				}
 			}
 		},
