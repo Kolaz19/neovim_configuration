@@ -55,7 +55,7 @@ local function getOptsTable()
 			--Start completion
 			['<C-Space>'] = require('cmp').mapping.complete(),
 			['<C-e>'] = require('cmp').mapping.abort(),
-			['<CR>'] = require('cmp').mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+			['<CR>'] = require('cmp').mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		}),
 		sources = require('cmp').config.sources({
 			{ name = 'nvim_lsp' },
