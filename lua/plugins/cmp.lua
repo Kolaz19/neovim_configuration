@@ -21,6 +21,14 @@ local function getOptsTable()
 			-- completion = cmp.config.window.bordered(),
 			-- documentation = cmp.config.window.bordered(),
 		},
+		completion = {
+			--Min. chars to trigger autocomplete
+			keyword_length = 3
+		},
+		-- Max amount of entries in popup
+		--performance = {
+		--	max_view_entries = 5
+		--},
 		mapping = require('cmp').mapping.preset.insert({
 			['<S-Tab>'] = require('cmp').mapping.select_prev_item(),
 			['<Tab>'] = require('cmp').mapping.select_next_item(),
