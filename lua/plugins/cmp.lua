@@ -5,9 +5,12 @@ local function getOptsTable()
 
 	vim.opt.completeopt = { "menu", "menuone", "noselect" }
 	return {
+		--Enable this to not have automatic floating window
+		--[[
 		completion = {
 			autocomplete = false
 		},
+		--]]
 		snippet = {
 			-- snipped engine required
 			expand = function(args)
