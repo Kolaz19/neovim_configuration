@@ -37,9 +37,8 @@ return {
 			}
 		}
 		--Load all snippets
-		local configDir = vim.fn.stdpath('config')
-		require("luasnip.loaders.from_lua").load({ paths = configDir .. "/lua/plugins/snippets" })
-
+		--local configDir = vim.fn.stdpath('config')
+		require("luasnip.loaders.from_lua").load({ paths = "~/neovim_snippets" })
 		vim.api.nvim_create_user_command('Snip', require("luasnip.loaders").edit_snippet_files, { nargs = 0 })
 	end
 }
