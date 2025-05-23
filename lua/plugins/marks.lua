@@ -8,8 +8,6 @@ return {
 			mappings = {
 				toggle = 'mm',
 				delete_buf = '<leader>d',
-				next = '<leader>w',
-				prev = '<leader>q',
 				preview = 'm:',
 			}
 		},

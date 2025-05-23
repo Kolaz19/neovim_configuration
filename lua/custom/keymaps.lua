@@ -16,6 +16,11 @@ vim.keymap.set('n', '<leader>v', '<C-w>v', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<leader>s', '<C-w>s', { desc = 'Split window horizontally' })
 --Marks manipulation
 vim.keymap.set('n', '<leader>D', '<cmd>:delmarks A-Z<cr>', { desc = 'Delete all global marks' })
+--vim.keymap.set('n', '<leader>d', '<cmd>:delmarks!<cr>', { desc = 'Delete all local marks' })
+vim.keymap.set('n', '<leader>w', "<cmd>:lua require('custom.utils').nextMark(false,false)<cr>", { desc = 'Go to next global mark' })
+vim.keymap.set('n', '<leader>q', "<cmd>:lua require('custom.utils').nextMark(false,true)<cr>", { desc = 'Go to previous global mark' })
+vim.keymap.set('n', '<leader>e', "<cmd>:lua require('custom.utils').nextMark(true,false)<cr>", { desc = 'Go to next local mark' })
+vim.keymap.set('n', '<leader>E', "<cmd>:lua require('custom.utils').nextMark(true,true)<cr>", { desc = 'Go to previous local mark' })
 --Rotate window
 vim.keymap.set('n', '<leader>z', '<C-w>r', { desc = 'Rotate window downwards/rightwards' })
 vim.keymap.set('n', '<leader>Z', '<C-w>R', { desc = 'Rotate window upwards/leftwards' })
