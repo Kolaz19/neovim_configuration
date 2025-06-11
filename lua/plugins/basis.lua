@@ -17,7 +17,9 @@ return {
 	},
 	{
 		'williamboman/mason-lspconfig.nvim',
-		dependencies = { 'williamboman/mason.nvim' },
+		ft = { "c", "h", "lua", "script", "ps1", "markdown" },
+		dependencies = { 'williamboman/mason.nvim',
+			'neovim/nvim-lspconfig' },
 		lazy = true,
 		opts = {
 			--ensure_installed = { "clangd", "lua_ls", "marksman", "powershell_es" },
