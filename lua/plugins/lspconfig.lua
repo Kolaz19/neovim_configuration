@@ -62,9 +62,7 @@ local function setupLanguageServers()
 					checkThirdParty = false,
 					library = {
 						vim.env.VIMRUNTIME,
-						--"/home/nikolas/Dokumente/Working/Projects/love2d/library",
-						--"/home/nikolas/Dokumente/Working/Projects/defold-neovim-stubs/",
-						"/home/nikolas/Dokumente/Working/Projects/pico8_library/"
+						"~/external_libs/pico8/library"
 						-- Depending on the usage, you might want to add additional paths here.
 					}
 				}

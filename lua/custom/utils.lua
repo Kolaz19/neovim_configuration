@@ -12,8 +12,8 @@ function M.run_project()
 	if (fileType == 'c' or fileType == 'cpp') then
 		vim.cmd("make run")
 	elseif fileType == 'lua' then
-		--vim.cmd(":!lua ".."main.lua")
-		vim.cmd(":!love .")
+		vim.cmd(":!lua ".."main.lua")
+		--vim.cmd(":!love .")
 	end
 end
 
