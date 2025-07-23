@@ -13,7 +13,7 @@ vim.opt.wrap = false
 vim.opt.breakindent = true
 vim.opt.showtabline = 0
 vim.g.termdebug_wide = 163
---vim.cmd("set nohlsearch")
+vim.cmd("set clipboard+=unnamedplus")
 
 --Vim does detect h files as cpp
 vim.g.c_syntax_for_h = 1
