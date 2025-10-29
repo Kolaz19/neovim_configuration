@@ -62,7 +62,8 @@ local function setupLanguageServers()
 					checkThirdParty = false,
 					library = {
 						vim.env.VIMRUNTIME,
-						"~/external_libs/pico8/library"
+						--"~/external_libs/pico8/library",
+						"~/external_libs/love2d/library"
 						-- Depending on the usage, you might want to add additional paths here.
 					}
 				}
