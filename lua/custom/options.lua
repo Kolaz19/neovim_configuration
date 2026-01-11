@@ -13,9 +13,10 @@ vim.opt.wrap = false
 vim.opt.breakindent = true
 vim.opt.showtabline = 0
 vim.g.termdebug_wide = 163
-vim.wo.relativenumber = false
+vim.wo.relativenumber = true
 vim.cmd("set clipboard+=unnamedplus")
 
+vim.g.node_host_prog = '/home/nikolas/Dokumente/emsdk/node/22.16.0_64bit/bin/node'
 --Vim does detect h files as cpp
 vim.g.c_syntax_for_h = 1
 vim.filetype.add(

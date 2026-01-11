@@ -5,6 +5,7 @@ local function setupLanguageServers()
 	-- Give capabilities (snipping) to LSP
 	-- So that the server knows what we can do
 	local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 	lspconfig.clangd.setup {
 		-- Server-specific settings. See `:help lspconfig-setup`
 		capabilities = capabilities,
@@ -55,6 +56,7 @@ local function setupLanguageServers()
 			client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
 				runtime = {
 					-- Tell the language server which version of Lua you're using
+					--version = 'Lua5.4'
 					version = 'LuaJIT'
 				},
 				-- Make the server aware of Neovim runtime files
@@ -70,6 +72,7 @@ local function setupLanguageServers()
 			})
 		end
 	}
+
 
 	-- Use LspAttach autocommand to only map the following keys
 	-- after the language server attaches to the current buffer
@@ -90,7 +93,7 @@ local function setupLanguageServers()
 			vim.keymap.set('n', 'gk', vim.lsp.buf.signature_help, opts)
 			--vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 			vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
-			vim.keymap.set('n', 'g<F2>', vim.lsp.buf.format, opts)
+			vim.keymap.set('n', '<F2>', vim.lsp.buf.format, opts)
 			--vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
 			--vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
 			--vim.keymap.set('n', '<space>wl', function()
