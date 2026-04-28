@@ -32,5 +32,11 @@ return {
 	{
 		'neovim-treesitter/treesitter-parser-registry',
 		lazy = true
+	},
+	{
+	  "dimtion/guttermarks.nvim",
+	  lazy = false,
+	  event = { "BufReadPost", "BufNewFile", "BufWritePre", "FileType" },
 	}
+
 }
