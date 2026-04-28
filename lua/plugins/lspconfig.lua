@@ -1,16 +1,14 @@
 local function setupLanguageServers()
 	-- Setup language servers.
-	local lspconfig = require('lspconfig')
 
 	-- Give capabilities (snipping) to LSP
 	-- So that the server knows what we can do
 	local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-	lspconfig.clangd.setup {
+	vim.lsp.config('clangd', {
 		-- Server-specific settings. See `:help lspconfig-setup`
 		capabilities = capabilities,
 		filetypes = { "c", "h" },
-		root_dir = lspconfig.util.root_pattern('.clang-format'),
 		cmd = {
 			"clangd",
 			"--background-index"
@@ -20,26 +18,27 @@ local function setupLanguageServers()
 		--CompileFlags:
 		--	Add:
 		--  - --target=x86_64-w64-windows-gnu
-	}
+	})
+	vim.lsp.enable('clangd')
 
-	lspconfig.marksman.setup {
+	vim.lsp.config('marksman', {
 		-- Server-specific settings. See `:help lspconfig-setup`
 		capabilities = capabilities,
-	}
-	--Only works with powershell 7
-	lspconfig.powershell_es.setup {
-		-- Server-specific settings. See `:help lspconfig-setup`
-		capabilities = capabilities,
-		bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services/"
-	}
+	})
+	vim.lsp.enable('marksman')
 
-	lspconfig.lua_ls.setup {
+	vim.lsp.config('lua_ls', {
 		capabilities = capabilities,
 		filetypes = { "lua", "script" },
 		settings = {
 			Lua = {
 				diagnostics = {
 					globals = { 'vim' },
+					enable = true
+				},
+				type = {
+					weakUnionCheck = true,
+					checkTableShape	= true
 				},
 				completion = {
 					callSnippet = 'Replace'
@@ -56,8 +55,8 @@ local function setupLanguageServers()
 			client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
 				runtime = {
 					-- Tell the language server which version of Lua you're using
-					--version = 'Lua5.4'
-					version = 'LuaJIT'
+					version = 'Lua5.4'
+					--version = 'LuaJIT'
 				},
 				-- Make the server aware of Neovim runtime files
 				workspace = {
@@ -65,13 +64,15 @@ local function setupLanguageServers()
 					library = {
 						vim.env.VIMRUNTIME,
 						--"~/external_libs/pico8/library",
-						"~/external_libs/love2d/library"
+						"~/external_libs/love2d/library",
+						"~/external_libs/lovr/library",
 						-- Depending on the usage, you might want to add additional paths here.
 					}
 				}
 			})
 		end
-	}
+	})
+	vim.lsp.enable('lua_ls')
 
 
 	-- Use LspAttach autocommand to only map the following keys
@@ -111,7 +112,7 @@ end
 return { --LSP
 	{
 		'neovim/nvim-lspconfig',
-		lazy = true,
+		lazy = false,
 		dependencies = {
 			'hrsh7th/nvim-cmp',
 		},

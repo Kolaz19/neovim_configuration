@@ -16,21 +16,8 @@ return {
 		}
 	},
 	{
-		'williamboman/mason-lspconfig.nvim',
-		ft = { "c", "h", "lua", "script", "ps1", "markdown" },
-		dependencies = { 'williamboman/mason.nvim',
-			'neovim/nvim-lspconfig' },
-		lazy = true,
-		opts = {
-			--ensure_installed = { "clangd", "lua_ls", "marksman", "powershell_es" },
-			--All Servers setup with nvim-lspconfig should be installed
-			automatic_installation = true,
-			handlers = nil,
-		}
-	},
-	{
 		'williamboman/mason.nvim',
-		lazy = true,
+		lazy = false,
 		--calls mason.setup()
 		config = true
 	},
@@ -42,4 +29,8 @@ return {
 		'saadparwaiz1/cmp_luasnip',
 		lazy = true
 	},
+	{
+		'neovim-treesitter/treesitter-parser-registry',
+		lazy = true
+	}
 }

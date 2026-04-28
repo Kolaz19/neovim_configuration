@@ -30,3 +30,9 @@ vim.api.nvim_create_user_command('Setdir', "cd %:h", { nargs = 0 })
 if vim.api.nvim_buf_get_name(0) ~= '' then
 	vim.cmd("Setdir")
 end
+
+-- Add fzf's bin directory to Neovim's PATH
+local fzf_bin = "/home/nikolas/.fzf/bin" -- REPLACE THIS WITH YOUR ACTUAL PATH
+if vim.fn.executable(fzf_bin .. "/fzf") == 1 then
+    vim.env.PATH = fzf_bin .. ":" .. vim.env.PATH
+end

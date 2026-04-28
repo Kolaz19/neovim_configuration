@@ -48,7 +48,11 @@ local opts = {
 return { --TREESITTER
 	{
 		'nvim-treesitter/nvim-treesitter',
-		build = { ":TSUpdate" },
+		dependencies = {
+			'neovim-treesitter/treesitter-parser-registry'
+		},
+		build = ':TSUpdate',
+		lazy = false,
 		opts = opts
 	}
 }

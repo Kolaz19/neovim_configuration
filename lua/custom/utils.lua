@@ -14,6 +14,7 @@ function M.run_project()
 	elseif fileType == 'lua' then
 		--vim.cmd(":!lua5.4 ".."main.lua")
 		vim.cmd(":!love .")
+		--vim.cmd(":!./lovr-x86_64.AppImage .")
 	end
 end
 
