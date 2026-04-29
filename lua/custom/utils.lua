@@ -1,13 +1,13 @@
-local M = {}
+local m = {}
 
-function M.build_conditional()
+function m.build_conditional()
 	local fileType = vim.bo.filetype
 	if (fileType == 'c' or fileType == 'cpp') then
 		vim.cmd("make build")
 	end
 end
 
-function M.run_project()
+function m.run_project()
 	local fileType = vim.bo.filetype
 	if (fileType == 'c' or fileType == 'cpp') then
 		vim.cmd("make run")
@@ -18,12 +18,12 @@ function M.run_project()
 	end
 end
 
-function M.build_conditional_and_run()
-	M.build_conditional()
-	M.run_project()
+function m.build_conditional_and_run()
+	m.build_conditional()
+	m.run_project()
 end
 
-function M.debug_this(opts)
+function m.debug_this(opts)
 	vim.cmd("Termdebug " .. opts.args)
 end
 
@@ -35,7 +35,7 @@ local function reverseMarklist(tab)
 	return newTab
 end
 
-function M.nextMark(lowercase, reverse)
+function m.nextMark(lowercase, reverse)
 	local asciiStart = 64
 	if lowercase then asciiStart = 96 end
 	local curLine = vim.api.nvim_win_get_cursor(0)
@@ -137,4 +137,24 @@ function M.nextMark(lowercase, reverse)
 	end
 end
 
-return M
+
+function m.set_next_mark(lowercase)
+  local from = lowercase and 'a' or 'A'
+  local to = lowercase and 'z' or 'Z'
+  for i = string.byte(from), string.byte(to) do
+    local mark = string.char(i)
+
+    local pos = vim.fn.getpos("'" .. mark)
+
+    if pos[2] == 0 then
+      -- mark at current cursor position
+      vim.cmd("mark " .. mark)
+      return
+    end
+  end
+
+  vim.notify("No available global marks (A–Z)", vim.log.levels.WARN)
+end
+
+
+return m

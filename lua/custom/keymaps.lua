@@ -2,9 +2,6 @@
 vim.keymap.set('n', '<F3>', "<cmd>:lua require('custom.utils').build_conditional()<cr>", { desc = 'Build Project' })
 vim.keymap.set('n', '<F8>', "<cmd>:lua require('custom.utils').run_project()<cr>", { desc = 'Build Project' })
 vim.keymap.set('n', '<F9>', "<cmd>:lua require('custom.utils').build_conditional_and_run()<cr>", { desc = 'Build Project and run it' })
---Tab switch
---vim.keymap.set('n', '<F2>', "<cmd>:tabn<cr>", { desc = 'Jump to next tab' })
---vim.keymap.set('t', '<F2>', "<cmd>:tabn<cr>", { desc = 'Jump to next tab' })
 --Move from window to window
 vim.cmd('nmap <space> <Nop>')
 vim.keymap.set('n', '<Up>', '<C-w>k', { desc = 'Move to window above' })
@@ -15,9 +12,11 @@ vim.keymap.set('n', '<Right>', '<C-w>l', { desc = 'Move to window on the right' 
 vim.keymap.set('n', '<leader>v', '<C-w>v', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<leader>s', '<C-w>s', { desc = 'Split window horizontally' })
 --Marks manipulation
-vim.keymap.set('n', '<leader>D', '<cmd>:delmarks A-Z<cr>', { desc = 'Delete all global marks' })
-vim.keymap.set('n', '<leader>d', '<cmd>:delmarks!<cr>', { desc = 'Delete all local marks' })
-
+vim.keymap.set('n', '<leader>M', '<cmd>:delmarks A-Z<cr>', { desc = 'Delete all global marks' })
+vim.keymap.set('n', '<leader>m', '<cmd>:delmarks!<cr>', { desc = 'Delete all local marks' })
+vim.keymap.set('n', 'mm', "<cmd>:lua require('custom.utils').set_next_mark(true)<cr>", { desc = 'Set next free lowercase mark' })
+vim.keymap.set('n', 'mM', "<cmd>:lua require('custom.utils').set_next_mark(false)<cr>", { desc = 'Set next free uppercase mark' })
+--Marks movement
 vim.keymap.set('n', '<leader>w', "<cmd>:lua require('custom.utils').nextMark(false,false)<cr>", { desc = 'Go to next global mark' })
 vim.keymap.set('n', '<leader>q', "<cmd>:lua require('custom.utils').nextMark(false,true)<cr>", { desc = 'Go to previous global mark' })
 vim.keymap.set('n', '<leader>e', "<cmd>:lua require('custom.utils').nextMark(true,false)<cr>", { desc = 'Go to next local mark' })
