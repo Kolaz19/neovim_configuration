@@ -47,5 +47,18 @@ return {
 		build = ":TSInstall lua vim vimdoc make xml html c && :TSUpdate",
 		lazy = false,
 		config = true,
+	},
+	{
+		'kolaz19/marks-extended',
+		lazy = true,
+		config = true,
+		keys = {
+			{ 'mm', '<cmd>:lua require("marks-extended").set_next_local_mark()<cr>' },
+			{ 'mM', '<cmd>:lua require("marks-extended").set_next_global_mark()<cr>' },
+			{ '<leader>w', '<cmd>:lua require("marks-extended").jump_to_next_global_mark()<cr>' },
+			{ '<leader>q', '<cmd>:lua require("marks-extended").jump_to_previous_global_mark()<cr>' },
+			{ '<leader>e', '<cmd>:lua require("marks-extended").jump_to_next_local_mark()<cr>' },
+			{ '<leader>E', '<cmd>:lua require("marks-extended").jump_to_previous_local_mark()<cr>' },
+		}
 	}
 }
