@@ -208,13 +208,18 @@ local opts = {
 
 
 return { --OIL
+	-- Oil is not actively maintained anymore
+	-- This is a fork that fixes bugs etc.
+	-- A new branch exists named 'canola', but it changes the config
 	{
-		'stevearc/oil.nvim',
+		'barrettruth/canola.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
 		lazy = true,
 		keys = {
 			{ "<C-n>", "<CMD>Oil --float<CR>", "Open parent directory" }
 		},
-		opts = opts
+		config = function()
+			require('oil').setup(opts)
+		end
 	}
 }
