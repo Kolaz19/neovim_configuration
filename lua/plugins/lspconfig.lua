@@ -38,7 +38,7 @@ local function setupLanguageServers()
 				},
 				type = {
 					weakUnionCheck = true,
-					checkTableShape	= true
+					checkTableShape = true
 				},
 				completion = {
 					callSnippet = 'Replace'
@@ -105,6 +105,16 @@ local function setupLanguageServers()
 			--vim.keymap.set('n', '<space>f', function()
 			--vim.lsp.buf.format { async = true }
 			--end, opts)
+			vim.keymap.set('n', 'go', vim.diagnostic.open_float)
+			vim.keymap.set('n', 'gO', vim.diagnostic.setqflist)
+			vim.keymap.set('n', 'gn', function()
+				vim.diagnostic.jump({ count = 1 })
+			end
+			, opts)
+			vim.keymap.set('n', 'gp', function()
+				vim.diagnostic.jump({ count = -1 })
+			end
+			, opts)
 		end,
 	})
 end
@@ -117,13 +127,5 @@ return { --LSP
 			'hrsh7th/nvim-cmp',
 		},
 		config = setupLanguageServers,
-		-- Global mappings.
-		-- See `:help vim.diagnostic.*` for documentation on any of the below functions
-		keys = {
-			{ 'go', vim.diagnostic.open_float },
-			{ 'gO', vim.diagnostic.setqflist },
-			{ 'gp', vim.diagnostic.goto_prev },
-			{ 'gn', vim.diagnostic.goto_next }
-		}
 	}
 }

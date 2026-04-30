@@ -34,9 +34,18 @@ return {
 		lazy = true
 	},
 	{
-	  "dimtion/guttermarks.nvim",
-	  lazy = false,
-	  event = { "BufReadPost", "BufNewFile", "BufWritePre", "FileType" },
-	  config = true
+		"dimtion/guttermarks.nvim",
+		lazy = false,
+		event = { "BufReadPost", "BufNewFile", "BufWritePre", "FileType" },
+		config = true
+	},
+	{
+		'nvim-treesitter/nvim-treesitter',
+		dependencies = {
+			'neovim-treesitter/treesitter-parser-registry'
+		},
+		build = ":TSInstall lua vim vimdoc make xml html c && :TSUpdate",
+		lazy = false,
+		config = true,
 	}
 }
