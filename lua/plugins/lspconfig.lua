@@ -34,7 +34,10 @@ local function setupLanguageServers()
 			Lua = {
 				diagnostics = {
 					globals = { 'vim' },
-					enable = true
+					enable = true,
+					disable = {
+						'unused-function'
+					}
 				},
 				type = {
 					weakUnionCheck = true,

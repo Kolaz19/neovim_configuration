@@ -11,9 +11,6 @@ vim.keymap.set('n', '<Right>', '<C-w>l', { desc = 'Move to window on the right' 
 --Split window
 vim.keymap.set('n', '<leader>v', '<C-w>v', { desc = 'Split window vertically' })
 vim.keymap.set('n', '<leader>s', '<C-w>s', { desc = 'Split window horizontally' })
---Marks manipulation
-vim.keymap.set('n', '<leader>M', '<cmd>:delmarks A-Z<cr>', { desc = 'Delete all global marks' })
-vim.keymap.set('n', '<leader>m', '<cmd>:delmarks!<cr>', { desc = 'Delete all local marks' })
 --Rotate window
 vim.keymap.set('n', '<leader>z', '<C-w>r', { desc = 'Rotate window downwards/rightwards' })
 vim.keymap.set('n', '<leader>Z', '<C-w>R', { desc = 'Rotate window upwards/leftwards' })
