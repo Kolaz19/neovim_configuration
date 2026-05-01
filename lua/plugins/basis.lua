@@ -48,7 +48,7 @@ return {
 		config = true,
 	},
 	{
-		'kolaz19/marks-extended',
+		'kolaz19/marks-plus',
 		lazy = true,
 		branch = 'main',
 		opts = {
@@ -59,13 +59,13 @@ return {
 			popup_sort_by_line_number = true,
 		},
 		keys = {
-			{ 'mm', '<cmd>:lua require("marks-extended").set_next_local_mark()<cr>' },
-			{ 'mM', '<cmd>:lua require("marks-extended").set_next_global_mark()<cr>' },
-			{ '<leader>w', '<cmd>:lua require("marks-extended").jump_to_next_global_mark()<cr>' },
-			{ '<leader>q', '<cmd>:lua require("marks-extended").jump_to_previous_global_mark()<cr>' },
-			{ '<leader>e', '<cmd>:lua require("marks-extended").jump_to_next_local_mark()<cr>' },
-			{ '<leader>E', '<cmd>:lua require("marks-extended").jump_to_previous_local_mark()<cr>' },
-			{ '<leader>d', '<cmd>:lua require("marks-extended").popup_delete_all_marks()<cr>' },
+			{ 'mm', '<cmd>:lua require("marks-plus").set_next_local_mark()<cr>' },
+			{ 'mM', '<cmd>:lua require("marks-plus").set_next_global_mark()<cr>' },
+			{ '<leader>w', '<cmd>:lua require("marks-plus").jump_to_next_global_mark()<cr>' },
+			{ '<leader>q', '<cmd>:lua require("marks-plus").jump_to_previous_global_mark()<cr>' },
+			{ '<leader>e', '<cmd>:lua require("marks-plus").jump_to_next_local_mark()<cr>' },
+			{ '<leader>E', '<cmd>:lua require("marks-plus").jump_to_previous_local_mark()<cr>' },
+			{ '<leader>d', '<cmd>:lua require("marks-plus").popup_delete_all_marks()<cr>' },
 		}
 	}
 }

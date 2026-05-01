@@ -8,7 +8,7 @@
   "guttermarks.nvim": { "branch": "main", "commit": "50088f99c2e978afe7f8e339e98b397babc7cbd2" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "lualine.nvim": { "branch": "master", "commit": "131a558e13f9f28b15cd235557150ccb23f89286" },
-  "marks-extended": { "branch": "main", "commit": "ac74acc3666c585022694f5aea9ae24451a416df" },
+  "marks-plus": { "branch": "main", "commit": "73748302092a0f4c3f1f8f42a8e447734d8b22b8" },
   "mason.nvim": { "branch": "main", "commit": "cb8445f8ce85d957416c106b780efd51c6298f89" },
   "nvim-cmp": { "branch": "main", "commit": "a1d504892f2bc56c2e79b65c6faded2fd21f3eca" },
   "nvim-lspconfig": { "branch": "master", "commit": "31026a13eefb20681124706a79fc1df6bf11ab27" },
