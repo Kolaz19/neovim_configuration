@@ -1,7 +1,7 @@
 --Custom keymaps
-vim.keymap.set('n', '<F3>', "<cmd>:lua require('custom.utils').build_conditional()<cr>", { desc = 'Build Project' })
-vim.keymap.set('n', '<F8>', "<cmd>:lua require('custom.utils').run_project()<cr>", { desc = 'Build Project' })
-vim.keymap.set('n', '<F9>', "<cmd>:lua require('custom.utils').build_conditional_and_run()<cr>", { desc = 'Build Project and run it' })
+vim.keymap.set('n', '<F3>', "<cmd>:lua require('custom.utils').build_project()<cr>", { desc = 'Build Project with make' })
+vim.keymap.set('n', '<F8>', "<cmd>:lua require('custom.utils').run_project()<cr>", { desc = 'Run Project with make' })
+vim.keymap.set('n', '<F9>', "<cmd>:lua require('custom.utils').build_and_run()<cr>", { desc = 'Build and run project with make' })
 --Move from window to window
 vim.cmd('nmap <space> <Nop>')
 vim.keymap.set('n', '<Up>', '<C-w>k', { desc = 'Move to window above' })
